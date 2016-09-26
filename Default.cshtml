@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Title = "Server Details";
+}
+
+<h1>Server Info</h1>
+<ul class="list-group">
+    <li class="list-group-item"><strong>Server Machine Name:</strong> @(Server.MachineName)</li>
+    <li class="list-group-item"><strong>Server IP:</strong> @(Request.ServerVariables["LOCAL_ADDR"])</li>
+    <li class="list-group-item"><strong>User Host:</strong> @(Request.UserHostName)</li>
+    <li class="list-group-item"><strong>User IP:</strong> @(Request.UserHostAddress)</li>
+    <li class="list-group-item">
+        <strong>Cookies:</strong>
+        <ul>
+            @foreach (var key in Request.Cookies.AllKeys)
+            {
+                <li>@( key ) : @( Request.Cookies[key] )</li>
+            }
+        </ul>
+    </li>
+</ul>
