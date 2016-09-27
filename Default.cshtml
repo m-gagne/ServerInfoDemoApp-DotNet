@@ -32,3 +32,10 @@
         </ul>
     </li>
 </ul>
+
+<div class="alert-info">This page will refresh every 2 seconds.</div>
+<script>
+    setTimeout(function () {
+        document.location = window.location.href.split('?')[0] + "?t=" + new Date().getTime();
+    }, 2000);
+</script>
